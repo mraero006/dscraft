@@ -25,8 +25,6 @@
 #include <malloc.h>
 #include <unistd.h>
 
-#include "creeper_bin.h"
-
 #include "fat/fatfile.h"
 
 #include "common/math.h"
