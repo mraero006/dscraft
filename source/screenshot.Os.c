@@ -202,22 +202,6 @@ void Debug_TakeScreenshotBMP(u16* vram1, u16* vram2)//, u16 bgcolor)
 	screenshotbmp2(bmpname, vram1, vram2);//, bgcolor);
 }
 
-void D3D_TakeScreenshotBMP(u16* buffer)
-{
-	scrnum++;
-	if(scrnum<10)sprintf(bmpname, "fat:/SCR_0000%d.bmp",scrnum);
-	else if(scrnum<100)sprintf(bmpname, "fat:/SCR_000%d.bmp",scrnum);
-	else if(scrnum<1000)sprintf(bmpname, "fat:/SCR_00%d.bmp",scrnum);
-	else if(scrnum<10000)sprintf(bmpname, "fat:/SCR_0%d.bmp",scrnum);
-	else sprintf(bmpname, "fat:/SCR_%d.bmp",scrnum);
-	//sprintf(dirname, "prout%d",(int)(scrnum/99));
-	//mkdir(dirname, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-	//chdir(dirname);
-	D3D_SaveScreen(bmpname, buffer);
-	//chdir("..");
-}
-
-
 void D3D_SaveScreen(const char* filename, u16* buffer)
 {
 	u8* temp=(u8*)malloc(256*192*3+sizeof(INFOHEADER)+sizeof(HEADER));
@@ -264,4 +248,20 @@ void D3D_SaveScreen(const char* filename, u16* buffer)
 	fwrite(temp, 1, 256*384*3+sizeof(INFOHEADER)+sizeof(HEADER), file);
 	fclose(file);
 	free(temp);
+}
+
+
+void D3D_TakeScreenshotBMP(u16* buffer)
+{
+	scrnum++;
+	if(scrnum<10)sprintf(bmpname, "fat:/SCR_0000%d.bmp",scrnum);
+	else if(scrnum<100)sprintf(bmpname, "fat:/SCR_000%d.bmp",scrnum);
+	else if(scrnum<1000)sprintf(bmpname, "fat:/SCR_00%d.bmp",scrnum);
+	else if(scrnum<10000)sprintf(bmpname, "fat:/SCR_0%d.bmp",scrnum);
+	else sprintf(bmpname, "fat:/SCR_%d.bmp",scrnum);
+	//sprintf(dirname, "prout%d",(int)(scrnum/99));
+	//mkdir(dirname, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	//chdir(dirname);
+	D3D_SaveScreen(bmpname, buffer);
+	//chdir("..");
 }
