@@ -39,6 +39,7 @@ CFLAGS	:=	-g -Wall -O3\
 		$(ARCH)
 
 CFLAGS	+=	$(INCLUDE) -DARM9
+CFLAGS	+=	-w
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
 
 ASFLAGS	:=	-g $(ARCH)
