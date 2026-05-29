@@ -492,5 +492,11 @@ void changeBlock(map_struct* m, int i, int j, int k, u8 type);
 void addWater(map_struct* m, int i, int j, int k, u8 type);
 
 void updateLightMap(void);
+void initFilesystem(void);
+void setFog(u8 mode);
+void loadTestMap(map_struct* m);
+void drawTestCube(void);
+void freeMap(map_struct* m);
+void freeQuadCache(void);
 
 #endif
