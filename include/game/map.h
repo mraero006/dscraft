@@ -491,4 +491,6 @@ void addQuad(quadList_struct* ql, map_struct* m, u8 direction, u8 light, u8 type
 void changeBlock(map_struct* m, int i, int j, int k, u8 type);
 void addWater(map_struct* m, int i, int j, int k, u8 type);
 
+void updateLightMap(void);
+
 #endif
