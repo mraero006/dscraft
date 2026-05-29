@@ -1,8 +1,9 @@
-# dscraft
-minecraft adaptation for nintendo DS
+# DScraft
+DScraft is a Minecraft adaptation for the Nintendo DS that was coded by Smealum, this fork is an attempt to get the source to compile with the latest version of DevkitPro.
 
+Uses LodePNG, iniParser, and PCX-Loader.
 
-all written in summer 2011
-
-
-feel free to use this (terrible) code for non-commercial purposes as long as you give credit to original authors; this repo includes some libraries i didn't write myself like lodepng, iniparser and pcx loader
+How to build:
+```bash
+make clean && make
+```
