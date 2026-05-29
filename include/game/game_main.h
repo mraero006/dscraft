@@ -13,6 +13,8 @@ int Game_FPS, Game_FrameCount, Game_VBLcount;
 #include <ctype.h>
 #include <unistd.h>
 
+#include "engine/screenshot.h"
+
 #include "fat/cache.h"
 #include "fat/file_allocation_table.h"
 #include "fat/bit_ops.h"
