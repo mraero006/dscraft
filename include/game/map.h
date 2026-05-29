@@ -498,5 +498,6 @@ void loadTestMap(map_struct* m);
 void drawTestCube(void);
 void freeMap(map_struct* m);
 void freeQuadCache(void);
+void freeLightCache(void);
 
 #endif
